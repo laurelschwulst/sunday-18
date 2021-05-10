@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      color: rgb(164, 157, 143);
+      background: rgb(77, 74, 66);
+      margin: 0;
+      overflow: hidden;
+    }
+    #welcome {
+      height: 100vh;
+      width: 100vw;
+      background: rgb(31, 33, 28);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #welcome .enter {
+      border: 1px solid rgb(77, 74, 66);
+      padding: 20px;
+      color: rgb(164, 157, 143);
+      display: inline-block;
+      cursor: pointer;
+    }
+    /* #welcome .enter:hover {
+      background: rgb(164, 157, 143);
+      color: rgb(31, 33, 28);
+    } */
+    #top {
+      height: 64px;
+      background: rgb(31, 33, 28);
+      /* border-bottom: 1px solid rgb(77, 74, 66); */
+      position: fixed;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+    }
+    #left {
+      width: 265px;
+      position: fixed;
+      top: 66px;
+      bottom: 1px;
+      left: 1px;
+      background: rgb(31, 33, 28);
+      /* border-right: 1px solid rgb(77, 74, 66); */
+      padding: 26px;
+    }
+    #right {
+      width: 54px;
+      position: fixed;
+      top: 66px;
+      bottom: 1px;
+      right: 1px;
+      background: rgb(31, 33, 28);
+      /* border-left: 1px solid rgb(77, 74, 66); */
+    }
+    #calendar {
+      position: fixed;
+      top: 66px;
+      left: 267px;
+      right: 56px;
+      bottom: 0;
+    }
+    #inside-calendar {
+      height: 100%;
+      width: 100%;
+      color: rgb(164, 157, 143);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 1px;
+    }
+    #inside-calendar div {
+      background: rgb(31, 33, 28);
+      padding: 1em;
+      display: grid;
+      grid-template-columns: 5fr 1fr 1fr;
+    }
+    #video {
+      display: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    #video video {
+      height: 110vh;
+      width: 110vw;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 1em;
+      padding: 24px;
+      margin-top: 0;
+      cursor: pointer;
+    }
+    .today span {
+      background: rgb(164, 157, 143);
+      margin: -1em;
+      padding: 1em;
+      display: inline-block;
+      color: rgb(31, 33, 28);
+      border-radius: 47%;
+    }
+    img {
+      max-width: 100%;
+    }
+    #may-2021 {
+      display: none;
+    }
+    .front-video {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      padding: 0;
+      background: transparent !important;
+      /* grid-row-start: 1;
+      grid-row-end: 3; */
+    }
+    .end-video {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="welcome">
+  <div class="enter">May 2021</div>
+</div>
+
+<div id="may-2021">
+  <div id="top">
+    <h1>May 2021</h1>
+  </div>
+  <div id="left">
+     <i>If you don't like the weather, just wait a few minutes.<br><br> ~ Lyall Watson</i><br><br><br><br>
+     <div style="width: 175px; height: 250px; border: 1px solid rgb(77, 74, 66)">
+       <div style="padding: 4px; margin: 30px; width: 115px; background: rgb(164, 157, 143); color: rgb(31, 33, 28); font-size: 10px; text-transform: uppercase; text-align: center;">
+         <span style="font-size: 12px;">Heaven's Breath</span><br><br>
+         A Natural History<br>
+         of the Wind<br><br>
+         <i>Lyall Watson</i>
+         <div style="border-top: 1px solid rgb(31, 33, 28); width: 85px; margin: 12px 10px; margin-top: 12px; padding-top: 8px; font-size: 8px;">
+           Introduction by<br>
+           <i>Nick Hunt</i>
+         </div>
+       </div>
+     </div>
+  </div>
+  <div id="video">
+    <div class="video-container">
+  		<video height="100%" width="auto" autoplay loop muted>
+  		  <source src="may01.mov" type="video/mp4">
+  		</video>
+  	</div>
+  </div>
+  <div id="right"></div>
+  <div id="calendar">
+    <div id="inside-calendar">
+      <div class="front-video">
+    		<!-- <video height="auto" width="100%" autoplay loop muted>
+    		  <source src="may01.mov" type="video/mp4">
+    		</video> -->
+      </div>
+      <!-- <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div> -->
+      <div>
+        1
+        <br><br>
+        sunny
+      </div>
+      <div>
+        2<br><br>
+        rainy, then cloudy
+      </div>
+      <div>
+        3
+        <br><br>
+        sunny
+      </div>
+      <div>
+        4<br><br>
+        sunny
+      </div>
+      <div>
+        5<br><br>
+        sunny, then rainy
+      </div>
+      <div>
+        6
+        <br><br>
+        sunny, then cloudy
+      </div>
+      <div>
+        7
+        <br><br>
+        cloudy
+      </div>
+      <div>
+        8
+        <br><br>
+        sunny, then rainy
+      </div>
+      <div>
+        9<br><br>
+        sunny
+      </div>
+      <!-- <div class="today"><span>9</span></div> -->
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+      <div>13</div>
+      <div>14</div>
+      <div>15</div>
+      <div>16</div>
+      <div>17</div>
+      <div>18</div>
+      <div>19</div>
+      <div>20</div>
+      <div>21</div>
+      <div>22</div>
+      <div>23</div>
+      <div>24</div>
+      <div>25</div>
+      <div>26</div>
+      <div>27</div>
+      <div>28</div>
+      <div>29</div>
+      <div>30</div>
+      <div>31</div>
+      <!-- <div class="end-video"></div> -->
+      <!-- <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div> -->
+    </div>
+  </div>
+</div>
+
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('#welcome .enter').click(function(){
+        $(this).hide();
+        $('#welcome').hide();
+        $('#may-2021').show();
+      });
+      // $('h1').click(function(){
+      //   $('#may-2021').hide();
+      //   $('#welcome').show();
+      //   $('#welcome .enter').show();
+      // })
+    });
+  </script>
+
+</body>
+
+</html>
